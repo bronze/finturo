@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Search, SlidersHorizontal, Bookmark } from "lucide-react"
+import { SlidersHorizontal, Bookmark } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Input } from "@/components/ui/input"
+import { SearchInput } from "@/components/search-input"
 
 const filters = [
   { id: "all", label: "Todos" },
@@ -25,8 +25,7 @@ export function FilterTabs() {
   return (
     <div className="flex items-center border rounded-md mb-6">
       <div className="relative md:hidden flex-1">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-        <Input placeholder="Buscar" className="pl-9 border-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
+        <SearchInput placeholder="Buscar" className="border-0 focus-visible:ring-0 focus-visible:ring-offset-0" />
       </div>
 
       <div className="overflow-x-auto flex-1 md:flex-none">

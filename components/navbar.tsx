@@ -1,8 +1,10 @@
 import Link from "next/link"
-import { Search, ChevronDown, Menu } from "lucide-react"
+import { ChevronDown, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { ModeToggle } from "@/components/mode-toggle"
+import { UserNav } from "@/components/user-nav"
+import { ClientOnly } from "@/components/client-only"
+import { SearchInput } from "@/components/search-input"
 
 export function Navbar() {
   return (
@@ -21,12 +23,13 @@ export function Navbar() {
           >
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
           </svg>
-          <span className="font-bold text-xl">Finturo</span>
+          <Link href="/" className="font-bold text-xl">
+            Finturo
+          </Link>
         </div>
 
-        <div className="relative hidden md:flex items-center flex-1 max-w-md">
-          <Search className="absolute left-3 h-4 w-4 text-muted-foreground" />
-          <Input placeholder="Buscar mercados" className="pl-9 pr-4 rounded-full" />
+        <div className="hidden md:block flex-1 max-w-md">
+          <SearchInput />
         </div>
 
         <div className="flex items-center gap-2 ml-auto">
@@ -34,14 +37,11 @@ export function Navbar() {
             Mais <ChevronDown className="ml-1 h-4 w-4" />
           </Button>
           <ModeToggle />
-          <Link href="/login">
-            <Button variant="ghost" size="sm">
-              Entrar
-            </Button>
-          </Link>
-          <Link href="/signup">
-            <Button size="sm">Cadastrar</Button>
-          </Link>
+
+          <ClientOnly>
+            <UserNav />
+          </ClientOnly>
+
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />
           </Button>
