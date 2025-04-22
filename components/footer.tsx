@@ -1,11 +1,15 @@
 import Link from "next/link"
 import { Mail, Twitter, Instagram, Github, Linkedin } from "lucide-react"
+import { Logo } from "@/components/logo"
 
 export function Footer() {
   return (
     <footer className="w-full border-t bg-muted/40">
       <div className="container flex flex-col sm:flex-row items-center justify-between py-4 md:py-6 px-4">
-        <div className="text-sm text-muted-foreground mb-4 sm:mb-0">Finturo Inc. © {new Date().getFullYear()}</div>
+        <div className="flex items-center gap-2 mb-4 sm:mb-0">
+          <Logo size="small" />
+          <span className="text-sm text-muted-foreground">© {new Date().getFullYear()}</span>
+        </div>
 
         <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4 sm:mb-0">
           <Link href="/privacidade" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
