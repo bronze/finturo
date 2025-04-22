@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { SignUpForm } from "@/components/signup-form"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Cadastro | Finturo",
@@ -27,6 +28,7 @@ export default function SignUpPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
