@@ -44,7 +44,7 @@ export function Logo({ size = "medium" }: LogoProps) {
           alt="Finturo"
           fill
           className="object-contain"
-          style={{ filter: isDark ? "invert(1) brightness(2)" : "none" }}
+          style={{ filter: isDark ? "none" : "invert(1) brightness(2)" }}
           priority
         />
       </div>

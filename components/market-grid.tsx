@@ -79,7 +79,7 @@ const markets = [
   },
   {
     id: 8,
-    title: "Decisão do Fed em Maio?",
+    title: "Decis��o do Fed em Maio?",
     icon: "💵",
     outcomes: [
       { name: "Redução de 50+ bps", percentage: 1, votes: { yes: true, no: true } },
